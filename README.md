@@ -2,10 +2,15 @@
 
 ![AngularJS](https://img.shields.io/badge/AngularJS-1.8.2-red) ![License](https://img.shields.io/badge/License-MIT-blue) ![Status](https://img.shields.io/badge/Status-Complete-green)
 
-A modern single-page web application for managing party rental inventory and customer orders, built with AngularJS 1.8.2.
+## 🎥 Application Demo Video
 
-## 🎉 Live Demo
-[Click here to view the live application](http://your-live-demo-link.com) *(Add your deployment link here)*
+<div align="center">
+  <a href="https://youtu.be/O4w3zyjGKrQ" target="_blank">
+    <img src="https://img.youtube.com/vi/O4w3zyjGKrQ/0.jpg" alt="JH Event Services Demo Video" width="600" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+  </a>
+  <br>
+  <em>Click the image above to watch the full demo video on YouTube</em>
+</div>
 
 ## 📸 Application Screenshots
 
@@ -41,16 +46,7 @@ A modern single-page web application for managing party rental inventory and cus
 ## 📁 Project Structure
 
 
-## 🛠️ Installation & Setup
 
-### Prerequisites
-- Modern web browser (Chrome, Firefox, Safari, Edge)
-- Python 3.x (for local server) **OR** Node.js with http-server
-
-### Local Development
-
-#### Method 1: Using Python (Recommended)
-```bash
 
 ## 🛠️ Installation & Setup
 
@@ -68,6 +64,11 @@ cd CIS3110-Fall25-Deliverable-3
 
 # 2. Start the local server
 python3 -m http.server 8000
+
+# 3. Open in browser
+# Go to: http://localhost:8000
+
+
 
 # 3. Open in browser
 # Go to: http://localhost:8000
