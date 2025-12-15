@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="jhEventApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JH Event Services - Party Rentals</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-glass-cheers"></i>
+                <a href="#!/">JH Event Services</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#!/"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#!/inventory"><i class="fas fa-warehouse"></i> Rentals</a></li>
+                <li><a href="#!/cart">
+                    <i class="fas fa-shopping-cart"></i> Cart 
+                    <span class="cart-count" ng-controller="CartController as cartCtrl">
+                        ({{cartCtrl.getCartCount()}})
+                    </span>
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container main-content">
+        <div ng-view></div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-glass-cheers"></i> JH Event Services</h3>
+                    <p>Your premier partner for unforgettable events since 2010</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@jhevents.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <p>Mon-Fri: 9am-6pm</p>
+                    <p>Sat: 10am-4pm</p>
+                    <p>Sun: By Appointment</p>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2025 JH Event Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    
+    <script src="app.js"></script>
+    
+    <script src="services/InventoryService.js"></script>
+    <script src="services/CartService.js"></script>
+    
+    <script src="controllers/HomeController.js"></script>
+    <script src="controllers/InventoryController.js"></script>
+    <script src="controllers/CartController.js"></script>
+</body>
+</html>

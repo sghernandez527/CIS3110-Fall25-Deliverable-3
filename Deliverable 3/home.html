@@ -1,0 +1,54 @@
+<div class="hero text-center p-2">
+    <h1><i class="fas fa-glass-cheers"></i> Welcome to JH Event Services</h1>
+    <p class="mb-2">Premier Party Rentals for Unforgettable Celebrations</p>
+    <a href="#!/inventory" class="btn btn-primary">
+        <i class="fas fa-shopping-cart"></i> Browse Rentals
+    </a>
+</div>
+
+<div class="mt-2">
+    <h2 class="text-center mb-1">Featured Rentals</h2>
+    <div class="grid">
+        <div class="card" ng-repeat="item in homeCtrl.featuredItems">
+            <div class="text-center mb-1">
+                <i class="fas fa-box-open fa-3x" style="color: #3498db;"></i>
+            </div>
+            <h3>{{item.name}}</h3>
+            <p class="mb-1">{{item.description}}</p>
+            <div class="item-details">
+                <p><strong>Category:</strong> {{item.category}}</p>
+                <p><strong>Price:</strong> ${{item.price}}/day</p>
+                <p><strong>Available:</strong> {{item.quantity}} units</p>
+            </div>
+            <button class="btn btn-success mt-1" ng-click="homeCtrl.addToCart(item)">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="mt-2">
+    <h2 class="text-center mb-1">Our Services</h2>
+    <div class="grid">
+        <div class="card text-center" ng-repeat="service in homeCtrl.services">
+            <i class="{{service.icon}} fa-2x mb-1" style="color: #3498db;"></i>
+            <h3>{{service.title}}</h3>
+            <p>{{service.description}}</p>
+        </div>
+    </div>
+</div>
+
+<div class="mt-2">
+    <h2 class="text-center mb-1">What Our Clients Say</h2>
+    <div class="grid">
+        <div class="card" ng-repeat="testimonial in homeCtrl.testimonials">
+            <i class="fas fa-quote-left fa-2x" style="color: #f39c12;"></i>
+            <p class="mt-1 mb-1"><em>"{{testimonial.quote}}"</em></p>
+            <div style="border-top: 1px solid #eee; padding-top: 1rem;">
+                <strong>{{testimonial.name}}</strong>
+                <br>
+                <span class="text-muted">{{testimonial.event}}</span>
+            </div>
+        </div>
+    </div>
+</div>

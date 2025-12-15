@@ -1,0 +1,15 @@
+jh-event-services/
+├── index.html
+├── app.js
+├── styles.css
+├── services/
+│   ├── InventoryService.js
+│   └── CartService.js
+├── controllers/
+│   ├── HomeController.js
+│   ├── InventoryController.js
+│   └── CartController.js
+└── views/
+    ├── home.html
+    ├── inventory.html
+    └── cart.html

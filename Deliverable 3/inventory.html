@@ -1,0 +1,58 @@
+<div class="inventory-header">
+    <h1><i class="fas fa-warehouse"></i> Rental Inventory</h1>
+    <p>Browse our extensive collection of party rental equipment</p>
+</div>
+
+<div class="filters mb-2">
+    <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" 
+               ng-model="invCtrl.searchTerm" 
+               placeholder="Search rentals..."
+               class="search-input">
+    </div>
+    
+    <div class="category-filters">
+        <button class="btn" 
+                ng-class="{'btn-primary': invCtrl.selectedCategory === 'All'}"
+                ng-click="invCtrl.filterByCategory('All')">
+            All Categories
+        </button>
+        <button class="btn" 
+                ng-class="{'btn-primary': invCtrl.selectedCategory === category}"
+                ng-repeat="category in invCtrl.categories"
+                ng-click="invCtrl.filterByCategory(category)">
+            {{category}}
+        </button>
+    </div>
+</div>
+
+<div class="grid">
+    <div class="card" ng-repeat="item in invCtrl.getFilteredItems()">
+        <div class="text-center mb-1">
+            <i class="fas fa-box-open fa-3x" style="color: #3498db;"></i>
+        </div>
+        <h3>{{item.name}}</h3>
+        <p class="category-badge">{{item.category}}</p>
+        <p class="mb-1">{{item.description}}</p>
+        <div class="item-details">
+            <p><strong>Daily Rate:</strong> ${{item.price}}/day</p>
+            <p><strong>Availability:</strong> {{item.quantity}} units in stock</p>
+            <p ng-if="item.featured" class="featured-badge">
+                <i class="fas fa-star"></i> Featured Item
+            </p>
+        </div>
+        <button class="btn btn-success mt-1" 
+                ng-click="invCtrl.addToCart(item)"
+                ng-disabled="item.quantity === 0">
+            <i class="fas fa-cart-plus"></i> 
+            {{item.quantity === 0 ? 'Out of Stock' : 'Add to Cart'}}
+        </button>
+    </div>
+</div>
+
+<div class="text-center mt-2" ng-if="invCtrl.getFilteredItems().length === 0">
+    <i class="fas fa-search fa-3x mb-1" style="color: #bdc3c7;"></i>
+    <h3>No items found</h3>
+    <p>Try a different search term or category</p>
+</div>
